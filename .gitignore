@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.Python
+build/
+dist/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Test & lint caches
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# Local runtime databases, fake outbox & transient outputs
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite3
+runtime/
+outbox_runtime/
+logs_runtime/
+tmp/
+
+# Secrets / local env (never commit real or dummy secret env files)
+.env
+.env.*
+!.env.example
+
+# OS & Editors
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*.swo
