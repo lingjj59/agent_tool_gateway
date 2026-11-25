@@ -1,0 +1,31 @@
+policy_version: "v1"
+
+roles:
+  reader_agent:
+    budget_limit: 8
+    allowed_tools:
+      - read_doc
+      - query_tickets
+    approval_required_tools: []
+  ops_agent:
+    budget_limit: 8
+    allowed_tools:
+      - read_doc
+      - query_tickets
+      - create_ticket
+      - send_email
+    approval_required_tools:
+      - send_email
+  budget_test_agent:
+    budget_limit: 3
+    allowed_tools:
+      - read_doc
+      - query_tickets
+    approval_required_tools: []
+
+read_doc:
+  public_dir: "sandbox/public"
+  secret_dir: "sandbox/secret"
+  redact_patterns:
+    - "CANARY_[A-Za-z0-9_-]+"
+  redacted_placeholder: "[REDACTED]"
